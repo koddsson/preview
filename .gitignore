@@ -1,0 +1,6 @@
+*.pdf
+*.docx
+*.swp
+.gradle
+gradle*
+build/

@@ -1,0 +1,22 @@
+apply plugin: 'java'
+apply plugin: "application"
+
+mainClassName = System.getProperty("mainClass")
+
+dependencies {
+    compile 'fr.opensagres.xdocreport:org.apache.poi.xwpf.converter.pdf:1.0.4'
+    compile "org.restlet.jee:org.restlet:2.2.1"
+    compile "org.restlet.jee:org.restlet.ext.jackson:2.2.1"
+    compile "org.restlet.jee:org.restlet.ext.jaxrs:2.2.1"
+    compile "org.restlet.jee:org.restlet.ext.fileupload:2.2.1"
+}
+
+repositories {
+    mavenCentral()
+    maven { url "http://maven.restlet.org" }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}
+
