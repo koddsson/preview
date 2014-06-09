@@ -1,5 +1,5 @@
-REST service to convert docx files to PDF
-=========================================
+Convert docx files to PDF via REST
+==================================
 
 It's all in the title ;)
 
