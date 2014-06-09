@@ -23,6 +23,13 @@ Here's a example
 curl -F name=test -F filedata=@HelloWord.docx http://localhost:8182 -XPUT
 ```
 
+### Docker
+
+```
+docker build -t poi .
+docker run -t poi
+```
+
 Contributing
 ------------
 

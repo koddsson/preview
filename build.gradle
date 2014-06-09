@@ -2,6 +2,11 @@ apply plugin: 'java'
 apply plugin: "application"
 
 mainClassName = System.getProperty("mainClass")
+aotCompile = true
+
+jar {
+    manifest.attributes("Main-Class": "poi.TestCon")
+}
 
 dependencies {
     compile 'fr.opensagres.xdocreport:org.apache.poi.xwpf.converter.pdf:1.0.4'
@@ -20,3 +25,10 @@ task wrapper(type: Wrapper) {
     gradleVersion = '1.11'
 }
 
+task fatJar(type: Jar) {
+    baseName = project.name + '-all'
+    from { 
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } 
+    }
+    with jar
+}
